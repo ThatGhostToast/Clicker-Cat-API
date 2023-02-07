@@ -36,6 +36,14 @@ export class User {
     private name: string = "";
 
     /**
+     * The user's role
+     * @private
+     * @type {string}
+     * @memberof User
+     */
+    private role: string = "";
+
+    /**
      * User Constructor
      * @constructor
      * @param id Id of the user
@@ -48,14 +56,14 @@ export class User {
      * @param conditions The user's pre existing conditions
      * @param image The user's profile picture
      */
-    constructor(id: number, email: string,password: string, name: string)
+    constructor(id: number, email: string,password: string, name: string, role: string)
     {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
+        this.role = role;
     }
-
 
      /**
       * Method to get the Id of the user

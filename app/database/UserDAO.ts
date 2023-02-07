@@ -94,7 +94,7 @@ export class UserDAO
             for(let x=0;x < result1.length;++x)
             {
                 // Add user and its data to the list
-                users.push(new User(result1[x].ID, result1[x].EMAIL, result1[x].PASSWORD, result1[x].NAME));
+                users.push(new User(result1[x].ID, result1[x].EMAIL, result1[x].PASSWORD, result1[x].NAME, result1[x].ROLE));
             }
 
             // Do a callback to return the results
@@ -130,7 +130,7 @@ export class UserDAO
             for(let x=0;x < result1.length;++x)
             {
                 // Get user from the database to return
-                user = new User(result1[x].ID, result1[x].EMAIL, result1[x].PASSWORD, result1[x].NAME);
+                user = new User(result1[x].ID, result1[x].EMAIL, result1[x].PASSWORD, result1[x].NAME, result1[x].ROLE);
             }
             // Do a callback to return the results
             callback(user);
@@ -165,7 +165,7 @@ export class UserDAO
             for(let x=0;x < result1.length;++x)
             {
                 // Get user from the database to return
-                user = new User(result1[x].ID, result1[x].EMAIL, result1[x].PASSWORD, result1[x].NAME);
+                user = new User(result1[x].ID, result1[x].EMAIL, result1[x].PASSWORD, result1[x].NAME, result1[x].ROLE);
             }
             // Do a callback to return the results
             callback(user);
