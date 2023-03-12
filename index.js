@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 // Create instance of an Express Application on Port 3000
 const express = require('express');
 const { User } = require('./lib/app/models/Users.js');
+const http = require('http');
 const app = express();
 const port = 3000;
 app.use(cors());
@@ -20,6 +21,16 @@ const dbPassword = "password"
 
 // Set location of static resources and use the JSON body parser
 app.use(express.static('app/images'))
+
+const server = http.createServer((req, res) => {
+    console.log('got request');
+
+    setTimeout(() => {
+        res.end('Hello World!');
+    }, 20000)
+});
+
+server.timeout = 20000;
 
 // =-=-=-= Route code begins =-=-=-=
 /**
