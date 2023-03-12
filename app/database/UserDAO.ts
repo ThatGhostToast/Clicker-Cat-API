@@ -45,9 +45,6 @@ export class UserDAO
         // Get pooled database connection and run queries   
         this.pool.getConnection(async function(err:any, connection:any)
         {
-            // Release connection in the pool
-            connection.release();
-
             // Throw error if an error
             if (err) throw err;
 
@@ -80,9 +77,6 @@ export class UserDAO
         // Get a pooled connection to the database, run the query to get all the users, and return the List of Users
         this.pool.getConnection(async function(err:any, connection:any)
         {
-            // Release connection in the pool
-            connection.release();
-
             // Throw error if an error
             if (err) throw err;
 
@@ -116,9 +110,6 @@ export class UserDAO
         // Get pooled database connection and run queries   
         this.pool.getConnection(async function(err:any, connection:any)
         {
-            // Release connection in the pool
-            connection.release();
-
             // Throw error if an error
             if (err) throw err;
 
@@ -151,9 +142,6 @@ export class UserDAO
         // Get pooled database connection and run queries   
         this.pool.getConnection(async function(err:any, connection:any)
         {
-            // Release connection in the pool
-            connection.release();
-
             // Throw error if an error
             if (err) throw err;
 
@@ -183,9 +171,6 @@ export class UserDAO
          // Get pooled database connection and run queries   
          this.pool.getConnection(async function(err:any, connection:any)
          {
-             // Release connection in the pool
-             connection.release();
- 
              // Throw error if an error
             if (err) throw err;
  
@@ -216,9 +201,6 @@ export class UserDAO
         // Get pooled database connection and run queries   
         this.pool.getConnection(async function(err:any, connection:any)
         {
-            // Release connection in the pool
-            connection.release();
-
             // Throw error if an error
            if (err) throw err;
 
