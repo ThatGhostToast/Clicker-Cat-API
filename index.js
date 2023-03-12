@@ -35,6 +35,12 @@ app.get('/', function (_req, res)
     res.send('This is the default root Route.');
 })
 
+app.get('/testroute', function (_req, res)
+{
+    console.log('Okay this works');
+    res.send('The testing route works');
+})
+
 /** 
  * GET Route at '/users' that returns all users from the database
  * @param _req User request
