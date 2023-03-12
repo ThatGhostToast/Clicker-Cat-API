@@ -9,10 +9,10 @@ This DAO handles the users table in our database
 
 export class UserDAO
 {
-    private host:string = "";
+    private host:string = "clicker-cat.clkzoscxfp7p.us-west-1.rds.amazonaws.com";
     private port:number = 3306;
-    private username:string = "";
-    private password:string = "";
+    private username:string = "admin";
+    private password:string = "password";
     private schema:string = "ClickerCat";
     private pool = this.initDbConnection();
     
@@ -54,7 +54,7 @@ export class UserDAO
             // Use Promisfy Util to make an async function and insert User
             connection.query = util.promisify(connection.query);
             // Database query assigned to a result variable
-            let result1 = await connection.query('INSERT INTO `USERS` (EMAIL, PASSWORD, NAME) VALUES(?,?,?)', [user.Email, user.Password, user.Name]);
+            let result1 = await connection.query('INSERT INTO `Users` (EMAIL, PASSWORD, NAME) VALUES(?,?,?)', [user.Email, user.Password, user.Name]);
             // If no rows were affected then return -1 to indicate an error
             if(result1.affectedRows != 1)
                callback(-1);
@@ -89,7 +89,7 @@ export class UserDAO
             // Use Promisfy Util to make an async function and run query to get all users
             connection.query = util.promisify(connection.query);
             // Database query assigned to a result variable
-            let result1 = await connection.query('SELECT * FROM `USERS`');
+            let result1 = await connection.query('SELECT * FROM `Users`');
             // Looping over the results and adding each user to the list
             for(let x=0;x < result1.length;++x)
             {
@@ -125,7 +125,7 @@ export class UserDAO
             // Use Promisfy Util to make an async function and run query to get all Users for search
             connection.query = util.promisify(connection.query);
             // Database query assigned to a result variable
-            let result1 = await connection.query("SELECT * FROM `USERS` WHERE ID = ?", id);
+            let result1 = await connection.query("SELECT * FROM `Users` WHERE ID = ?", id);
             // Assigning the result to the user model using a loop
             for(let x=0;x < result1.length;++x)
             {
@@ -160,7 +160,7 @@ export class UserDAO
             // Use Promisfy Util to make an async function and run query to get all Users for search
             connection.query = util.promisify(connection.query);
             // Database query assigned to a result variable
-            let result1 = await connection.query("SELECT * FROM `USERS` WHERE EMAIL = ?", email);
+            let result1 = await connection.query("SELECT * FROM `Users` WHERE EMAIL = ?", email);
             // Adding the result to the user model 
             for(let x=0;x < result1.length;++x)
             {
@@ -194,7 +194,7 @@ export class UserDAO
             // Use Promisfy Util to make an async function and insert User
             connection.query = util.promisify(connection.query);
             // Database query assigned to a result variable
-            let result1 = await connection.query("UPDATE `USERS` SET EMAIL=?, PASSWORD=?, NAME=?", [user.Email, user.Password, user.Name]);
+            let result1 = await connection.query("UPDATE `Users` SET EMAIL=?, PASSWORD=?, NAME=?", [user.Email, user.Password, user.Name]);
             // If any row was affected in the database, update the changes variable to reflect that
             if(result1.changedRows != 0)
                 ++changes;
@@ -227,7 +227,7 @@ export class UserDAO
             // Use Promisfy Util to make an async function and insert User
             connection.query = util.promisify(connection.query);
             // Database query assigned to a result variable
-            let result1 = await connection.query('DELETE FROM `USERS` WHERE ID=?', [userId]);
+            let result1 = await connection.query('DELETE FROM `Users` WHERE ID=?', [userId]);
             // Set the affected rows to the changes variable
             changes = changes + result1.affectedRows;
 

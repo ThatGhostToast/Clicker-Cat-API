@@ -1,6 +1,6 @@
 // Application Dependencies
 const { UserDAO } = require('./lib/app/database/UserDAO.js')
-const cors = require("cors");
+const cors = require('cors');
 
 const bodyParser = require('body-parser');
 
@@ -9,14 +9,14 @@ const express = require('express');
 const { User } = require('./lib/app/models/Users.js');
 const app = express();
 const port = 3000;
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 // Database configuration
-const dbHost = "localhost"
-const dbPort = 8889;
-const dbUsername = "root"
-const dbPassword = "root"
+const dbHost = "clicker-cat.clkzoscxfp7p.us-west-1.rds.amazonaws.com"
+const dbPort = 3306;
+const dbUsername = "admin"
+const dbPassword = "password"
 
 // Set location of static resources and use the JSON body parser
 app.use(express.static('app/images'))
