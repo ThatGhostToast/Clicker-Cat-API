@@ -8,7 +8,8 @@ var logger = loggly.createClient({ token:"e24b11ec-704e-4859-b8b1-a838bd7f5e93",
 DAO file used for connecting the API to the database
 This DAO handles the users table in our database
 */
-export class UserDAO
+
+export class UserDAO 
 {
     private host:string = "clicker-cat.clkzoscxfp7p.us-west-1.rds.amazonaws.com";
     private port:number = 3306;
