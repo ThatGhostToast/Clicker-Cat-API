@@ -38,7 +38,7 @@ app.get('/', function (_req, res)
     // Sending a log statement to loggly
     logger.log("Exiting the default ('/') route");
     // Return Test Text
-    res.send('This is the default root Route!!!');
+    res.send('This is the default root Route.');
 })
 
 app.get('/testroute', function (_req, res)
