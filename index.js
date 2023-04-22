@@ -73,7 +73,7 @@ app.get('/users', function (_req, res)
         res.json(user); // Responding with a JSON of all users
     });
 })
-
+ 
 /** 
  * GET Route that does a wildcard search for all users searching by id from the database
  * @param req User request
